@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
+@import url("font-awesome.min.css");
 @import url("fontawesome-all.min.css");
 
 /*
@@ -1953,7 +1954,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+			font-family: 'FontAwesome';
 			font-weight: 400;
 		}
 
