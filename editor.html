@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects JSON Editor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Additional styles for the editor page */
+    body {
+      padding: 20px;
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .editor-container {
+      max-width: 800px;
+      margin: auto;
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: none;
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background: #ff9800;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .preview {
+      margin-top: 20px;
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    .output {
+      margin-top: 20px;
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="editor-container">
+    <h1>Projects JSON Editor</h1>
+    <label for="project-select">Select Project:</label>
+    <select id="project-select">
+      <option value="">-- Select a Project --</option>
+    </select>
+    
+    <div id="editor-form" style="display: none;">
+      <label for="title-input">Title:</label>
+      <input type="text" id="title-input" />
+      
+      <label for="short-desc-input">Short Description:</label>
+      <textarea id="short-desc-input"></textarea>
+      
+      <label for="content-md-input">Content (Markdown):</label>
+      <textarea id="content-md-input"></textarea>
+      
+      <button id="update-preview">Update Preview</button>
+      
+      <div class="preview" id="markdown-preview">
+        <h2>Live Preview:</h2>
+        <section id="blog-content">
+          <p>Loading content...</p>
+        </section>
+      </div>
+      
+      <button id="save-changes">Save Changes</button>
+      <h2>Updated JSON</h2>
+      <div class="output" id="json-output"></div>
+    </div>
+  </div>
+  
+  <!-- Include Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    let projectsData = null;
+    let currentProjectIndex = null;
+    
+    // Load projects.json on page load
+    fetch('projects.json')
+      .then(response => response.json())
+      .then(data => {
+        projectsData = data.projects;
+        const projectSelect = document.getElementById('project-select');
+        projectsData.forEach((project, index) => {
+          const option = document.createElement('option');
+          option.value = index;
+          option.textContent = project.title;
+          projectSelect.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading projects.json:', error);
+      });
+      
+    document.getElementById('project-select').addEventListener('change', function() {
+      const index = this.value;
+      if (index === '') {
+        document.getElementById('editor-form').style.display = 'none';
+        return;
+      }
+      currentProjectIndex = index;
+      const project = projectsData[index];
+      document.getElementById('title-input').value = project.title;
+      document.getElementById('short-desc-input').value = project.shortDescription;
+      document.getElementById('content-md-input').value = project.contentMarkdown;
+      document.getElementById('editor-form').style.display = 'block';
+      updatePreview();
+    });
+    
+    function updatePreview() {
+      const markdownText = document.getElementById('content-md-input').value;
+      const htmlContent = marked.parse(markdownText);
+      console.log(htmlContent);
+      document.getElementById('blog-content').innerHTML = htmlContent;
+    }
+    
+    document.getElementById('update-preview').addEventListener('click', function() {
+      updatePreview();
+    });
+    
+    document.getElementById('save-changes').addEventListener('click', function() {
+      // Update the project data with the current input values
+      const updatedProject = {
+        ...projectsData[currentProjectIndex],
+        title: document.getElementById('title-input').value,
+        shortDescription: document.getElementById('short-desc-input').value,
+        contentMarkdown: document.getElementById('content-md-input').value
+      };
+      projectsData[currentProjectIndex] = updatedProject;
+      // Output the updated JSON so you can copy it back to your projects.json file
+      const updatedJson = JSON.stringify({ projects: projectsData }, null, 2);
+      document.getElementById('json-output').textContent = updatedJson;
+      alert('Changes saved. Copy the updated JSON from the output area and update your projects.json file.');
+    });
+  </script>
+</body>
+</html>

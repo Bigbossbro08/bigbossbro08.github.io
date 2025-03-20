@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "id": "horse-archery-in-alsv4",
+      "title": "Horse Archery Integration within ALSV4",
+      "shortDescription": "My implementation of Horse Archery after I implemented Horse mounting system",
+      "subtitle": "Unused",
+      "contentMarkdown": "In past I added horse mouting system. For 360 animation, tried to be creative and added auto switching of hands in horse archery. All of it is done through the framework of ALSV4 made for Unreal Engine \n\n<div class=\"video-container\">\n  <iframe src=\"https://www.youtube.com/embed/ZLRUUHrdzJA\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>"
+    },
+    {
+      "id": "new-overlays-to-alsv4",
+      "title": "Adding new Overlays to ALSV4",
+      "shortDescription": "My experimental work on adding ALSV4",
+      "subtitle": "Unused",
+      "contentMarkdown": "Nothing much. Here I am showing my small experimental work where I added new poses using ALSV4. Even added some other unique features to it.\n\n<div class=\"video-container\">\n  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/SQsvB1hEVMA?si=khHGEjaWx6-GAGRX\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>"
+    },
+    {
+      "id": "3d-works",
+      "title": "Some of my 3D hobbies I did in past",
+      "shortDescription": "...",
+      "subtitle": "Unused",
+      "contentMarkdown": "As a hobby and to have some ideas about how 3D assets work for game engines, did some experimental 3D modelling. Did an eastern/mongolian style armor which fits Unreal's Mannequin skeleton in past.\n\n![Mongol Spear](https://cdnb.artstation.com/p/assets/images/images/035/977/523/large/bigbossbro08-mongolianspearrender.jpg?1616422644)\n\n![Mongol Mace](https://cdnb.artstation.com/p/assets/images/images/036/016/451/large/bigbossbro08-mongolianmace.jpg?1616513920)\n\n![Mongol Sword](https://cdnb.artstation.com/p/assets/images/images/035/971/967/large/bigbossbro08-mongolianswordrender.jpg?1616411333)\n\n![Mongol/Eastern Soldier Body](https://cdnb.artstation.com/p/assets/images/images/035/976/279/large/bigbossbro08-mongolianarmorrender.jpg?1616420354)"
+    },
+    {
+      "id": "shader-trick-to-have-unique-emblem",
+      "title": "Shader trick that I did to make unique emblem",
+      "shortDescription": "...",
+      "subtitle": "Unused",
+      "contentMarkdown": "I made this simple shader trick in past. Where I used 3 rgb layer to split the color and then render unique by multiplying it with my own value I want. Altho some better way do exist.\n<div class=\"video-container\">\n  <iframe src=\"https://cdn.artstation.com/p/video_sources/000/320/769/projecthorde-samplescene-pc-mac-linux-standalone-unity-2020.mp4\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n</div>"
+    },
+    {
+      "id": "my-experimental-approach-to-expand-rts-mechanics",
+      "title": "Experimental gameplay mechanics behavior for RTS games like Age Of Empires II",
+      "shortDescription": "Here's my experiment about how its possible to have more mechanics AOE2 style RTS game. As in units on top of wall or ships. Even unit movement during ship.",
+      "subtitle": "Unused",
+      "contentMarkdown": "Here's my experiment about how its possible to have more mechanics AOE2 style RTS game. As in units on top of wall or ships. Even unit movement during ship. Also seamlessly to have units in and unboard them somewhere. I'll write more about them soon...\n<div class=\"video-container\">\n  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/cb8yls7U-dY?si=iPCKVb-vUovfEScA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>\n</div>"
+    },
+    {
+      "id": "my-approach-to-deterministic-simulation",
+      "title": "My approach to implement deterministic lockstep simulation",
+      "shortDescription": "To be updated",
+      "subtitle": "Unused",
+      "contentMarkdown": "To be updated"
+    }
+  ]
+}
