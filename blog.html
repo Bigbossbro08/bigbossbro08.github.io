@@ -6,6 +6,10 @@
   <meta name="description" content="Project Blog" />
   <title>Project Blog</title>
   <link rel="stylesheet" href="styles.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+  />
 </head>
 <body>
   <header>
@@ -21,8 +25,14 @@
     <p>© 2025 Bigbossbro08</p>
   </footer>
 
-  <!-- Include Marked.js from CDN -->
+  <!-- Marked.js -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Highlight.js core + languages you need -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+
+  <!-- Your blog‑rendering code -->
   <script src="blog.js"></script>
 </body>
 </html>
